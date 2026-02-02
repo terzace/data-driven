@@ -1,0 +1,79 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+
+  background-color: #171423;
+  border: 1px solid #171423;
+
+  border-radius: 30px;
+
+  padding: 28px;
+  transition: all 0.3s ease;
+}
+
+.textWrapper {
+  display: grid;
+  
+  gap: 20px;
+}
+
+.textDescriptionColor {
+  color: #9ca3af;
+  white-space: pre-line;
+}
+
+.priceWrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.textPrice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.titlePrice {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.oldPrice {
+  font-size: 16px;
+  text-decoration: line-through;
+  color: #6e7681;;
+}
+
+.descriptionPrice {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.postPrice {
+  font-size: 12px;
+}
+
+.cardButton {
+  width: 100%;
+  border-radius: 12px;
+  background: #ffffff0d;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 10px 0;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cardButton:hover {
+  background: #ffffff3a;
+}
+
+.wrapper:hover {
+  border: 1px solid var(--main-color);
+}

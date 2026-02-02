@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 32px;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.descWrapper {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 700px;
+  gap: 20px;
+}
+
+.textWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.descriptionIcon {
+  font-size: 24px;
+}
+
+.titleDesription {
+  color: #9ca3af;
+}
+
+.textBold {
+  font-weight: bold;
+}
+
+.textColorGray {
+  color: #b4bacf;
+}

@@ -1,0 +1,27 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  color-scheme: light dark;
+  color: white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --main-color: #e00917;
+  --bg-color: #242424;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+body {
+  margin: 0 auto;
+
+  max-width: 1200px;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(circle at 50% -30%, var(--main-color) 0%, #242424 60%);
+  background-attachment: fixed;
+}
