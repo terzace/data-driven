@@ -30,7 +30,7 @@ function ServiceCard({ card }: ServiceCardProps) {
         </div>
         {card.postPrice && <p className={styles.postPrice}>{card.postPrice}</p>}
         
-        <button onClick={() => window.open(LINKS.groupTg, '_blank')} className={styles.cardButton}>{card.buttonTitle}</button>
+        <button onClick={() => window.open(LINKS.privateTg, '_blank')} className={styles.cardButton}>{card.buttonTitle}</button>
       </div>
     </div>
   )
