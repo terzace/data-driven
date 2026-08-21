@@ -76,14 +76,28 @@
   transition: all 0.3s ease;
 }
 
+.plan:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+}
+
 .planHighlight {
   border: 1px solid var(--main-color);
   background: rgba(224, 9, 23, 0.1);
 }
 
+.planHighlight:hover {
+  background: rgba(224, 9, 23, 0.18);
+}
+
 .planAccent {
   border: 1px solid rgba(224, 9, 23, 0.35);
   background: rgba(224, 9, 23, 0.04);
+}
+
+.planAccent:hover {
+  border-color: rgba(224, 9, 23, 0.55);
+  background: rgba(224, 9, 23, 0.09);
 }
 
 .planHeader {
