@@ -22,11 +22,12 @@ type ServiceCardProps = {
     buttonTitle: string;
   }
   featured?: boolean;
+  id?: string;
 }
 
-function ServiceCard({ card, featured }: ServiceCardProps) {
+function ServiceCard({ card, featured, id }: ServiceCardProps) {
   return (
-    <div className={featured ? `${styles.wrapper} ${styles.wrapperFeatured}` : styles.wrapper}>
+    <div id={id} className={featured ? `${styles.wrapper} ${styles.wrapperFeatured}` : styles.wrapper}>
       <div className={styles.textWrapper}>
         <h2>{card.title}</h2>
 

@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Manrope', system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   color-scheme: light dark;
   color: white;
@@ -18,9 +20,8 @@ h1, h2, p {
 }
 
 body {
-  margin: 0 auto;
+  margin: 0;
 
-  max-width: 1200px;
   background-color: var(--bg-color);
   background-image: radial-gradient(circle at 50% -30%, var(--main-color) 0%, #242424 60%);
   background-attachment: fixed;

@@ -5,7 +5,7 @@ import styles from './AboutMe.module.scss'
 
 function AboutMe() {
   return (
-    <div className={styles.wrapper}>
+    <div id="about" className={styles.wrapper}>
       <Avatar />
 
       <div className={styles.titleWrapper}>

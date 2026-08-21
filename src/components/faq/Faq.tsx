@@ -6,7 +6,7 @@ function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <div className={styles.wrapper}>
+    <div id="faq" className={styles.wrapper}>
       <div className={styles.header}>
         <h2>Часто задаваемые вопросы</h2>
         <p className={styles.headerNote}>

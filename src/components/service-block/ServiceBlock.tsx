@@ -7,14 +7,14 @@ function ServiceBlock() {
   const featuredCard = SERVICE_CARD.find((card) => card.plans)
 
   return (
-    <div className={styles.wrapper}>
+    <div id="services" className={styles.wrapper}>
       <h2>С чем могу помочь:</h2>
 
       <div className={styles.cardWrapper}>
         {simpleCards.map((card, index) => <ServiceCard key={index} card={card} />)}
       </div>
 
-      {featuredCard && <ServiceCard card={featuredCard} featured />}
+      {featuredCard && <ServiceCard card={featuredCard} featured id="mentorship" />}
     </div>
   )
 }
