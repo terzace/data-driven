@@ -8,7 +8,7 @@ function Faq() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
-        <h2>Частые вопросы</h2>
+        <h2>Часто задаваемые вопросы</h2>
         <p className={styles.headerNote}>
           Если ответа на вопрос нет — <a href={LINKS.privateTg} target="_blank" rel="noreferrer">пиши в Telegram</a>, отвечу лично.
         </p>
