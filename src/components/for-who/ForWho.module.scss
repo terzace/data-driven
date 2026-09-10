@@ -1,0 +1,53 @@
+.wrapper {
+  display: grid;
+  gap: 32px;
+  scroll-margin-top: 100px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.headerNote {
+  color: #9ca3af;
+  font-size: 14px;
+  max-width: 360px;
+}
+
+.cardWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+
+  background-color: #171423;
+  border: 1px solid #171423;
+  border-radius: 30px;
+  padding: 28px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border: 1px solid var(--main-color);
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.description {
+  color: #9ca3af;
+}

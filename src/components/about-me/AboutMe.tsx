@@ -10,7 +10,7 @@ function AboutMe() {
 
       <div className={styles.titleWrapper}>
         <h1>Data Driven / Bogdan Ivanov</h1>
-        <p className={styles.titleDesription}>Менторство и выход на оффер Data Analyst / Data Engineer</p>
+        <p className={styles.titleDesription}>Менторство и выход на оффер DA / PA / DE</p>
       </div>
 
       <div className={styles.descWrapper}>

@@ -92,13 +92,11 @@
 }
 
 .planAccent {
-  border: 1px solid rgba(224, 9, 23, 0.35);
-  background: rgba(224, 9, 23, 0.04);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .planAccent:hover {
-  border-color: rgba(224, 9, 23, 0.55);
-  background: rgba(224, 9, 23, 0.09);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .planHeader {
@@ -124,9 +122,9 @@
 }
 
 .planBadgeMuted {
-  color: #ffffff;
-  background: rgba(224, 9, 23, 0.18);
-  border: 1px solid rgba(224, 9, 23, 0.35);
+  color: #9ca3af;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .planPrice {
