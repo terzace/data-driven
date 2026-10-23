@@ -54,16 +54,11 @@ h1 em{font-style:normal;color:#ff4d63}
 .stats span{display:block;margin-top:5px;font-size:13px;color:var(--muted);font-weight:600}
 .cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 .sec{display:grid;gap:24px;scroll-margin-top:100px}
-.duo{display:grid;grid-template-columns:calc((100% - 40px) / 3 * 2 + 20px) 1fr;gap:20px}
-.duo .sec{grid-template-rows:auto 1fr}
-.duo .sec .grid{grid-template-columns:1fr}
-.duo .sec:first-child .grid{grid-template-columns:1fr 1fr}
 /* нить между этапами */
 .sec.ph{position:relative}
-.container>.sec.ph::before,.duo .sec.ph:first-child::before,.duo .sec.ph:nth-child(2)::before{content:"";position:absolute;left:16px;top:-64px;height:64px;width:2px;border-radius:1px;background:linear-gradient(180deg,rgba(255,77,99,0),#ff4d63)}
-.hero+.sec.ph::before,.duo .sec.ph:nth-child(2)::before{display:none}
-.duo .sec:first-child .grid{position:relative}
-.duo .sec:first-child .grid::after{content:"→";position:absolute;right:-24px;top:50%;transform:translateY(-50%);z-index:2;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:15px;font-weight:700;background:linear-gradient(125deg,var(--main),#db2461);box-shadow:0 0 0 4px rgba(36,36,36,.85)}
+.container>.sec.ph::before{content:"";position:absolute;left:16px;top:-64px;height:64px;width:2px;border-radius:1px;background:linear-gradient(180deg,rgba(255,77,99,0),#ff4d63)}
+.hero+.sec.ph::before{display:none}
+.sec.ph.one .grid{grid-template-columns:calc((100% - 20px) / 2)}
 .sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .sec-h h2{font-size:28px;font-weight:700;display:flex;align-items:center;gap:14px}
 .sec-h h2 em{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(125deg,var(--main),#db2461);font-size:16px;font-weight:800}
@@ -106,11 +101,8 @@ footer b{color:#fff}
   .actions .btn{text-align:center}
   .container{padding:0 20px 48px;gap:48px;margin-top:20px}
   .card,.proj{padding:22px;border-radius:24px}
-  .duo{grid-template-columns:1fr;gap:48px}
-  .container>.sec.ph::before,.duo .sec.ph:first-child::before,.duo .sec.ph:nth-child(2)::before{top:-48px;height:48px}
-  .duo .sec.ph:nth-child(2)::before{display:block}
-  .duo .sec:first-child .grid::after{display:none}
-  .duo .sec:first-child .grid{grid-template-columns:1fr}
+  .container>.sec.ph::before{top:-48px;height:48px}
+  .sec.ph.one .grid{grid-template-columns:1fr}
   .grid.x5{grid-template-columns:1fr}
   .grid.x5 .card,.grid.x5 .card:nth-last-child(-n+2){grid-column:auto}
   .final{padding:26px;border-radius:24px}
@@ -136,8 +128,8 @@ footer b{color:#fff}
 
 <section class="sec ph"><div class="sec-h"><h2><em>1</em>Старт</h2><span>блоки 00–01</span></div><div class="grid"><article class="card"><span class="num">00</span><h3>Как пользоваться роадмапом</h3><p>Как устроен курс и как не перегореть</p><div class="chips"><i>порядок блоков</i><i>работа с материалами</i><i>нейросети в учебе</i></div></article><article class="card"><span class="num">01</span><h3>Введение в профессию</h3><p>Кто такой аналитик и с чем он работает</p><div class="chips"><i>виды аналитиков</i><i>работа в IT-команде</i><i>Jira и Confluence</i><i>ИИ-агент Claude Code</i></div></article></div></section>
 <section class="sec ph"><div class="sec-h"><h2><em>2</em>SQL и данные</h2><span>блоки 02–05</span></div><div class="grid"><article class="card"><span class="num">02</span><h3>SQL и теория баз данных</h3><p>Главный инструмент аналитика</p><div class="chips"><i>курс по SQL</i><i>реляционные БД</i><i>нормализация</i><i>дубли при JOIN</i></div></article><article class="card"><span class="num">03</span><h3>SQL и БД: продвинутый уровень</h3><p>Как база устроена внутри</p><div class="chips"><i>OLAP и OLTP</i><i>MPP и Greenplum</i><i>ClickHouse</i><i>оконные функции</i><i>оптимизация запросов</i></div></article><article class="card"><span class="num">04</span><h3>SQL практика и тренажеры</h3><p>Набиваем руку на задачах</p><div class="chips"><i>LeetCode и SQL-EX</i><i>30–50 задач на базу</i><i>100+ на уверенность</i><i>задачи к мок-собесу</i></div></article><article class="card"><span class="num">05</span><h3>Data Flow и архитектура данных</h3><p>Откуда берутся данные</p><div class="chips"><i>источник → витрина</i><i>DWH и Data Lake</i><i>ETL</i><i>batch и streaming</i></div></article></div></section>
-<div class="duo"><section class="sec ph"><div class="sec-h"><h2><em>3</em>Метрики и BI</h2><span>блоки 06–07</span></div><div class="grid"><article class="card"><span class="num">06</span><h3>Метрики и продуктовое мышление</h3><p>На каком языке говорить с бизнесом</p><div class="chips"><i>AARRR и HEART</i><i>юнит-экономика</i><i>дерево метрик и когорты</i><i>разбор бизнес-кейсов</i></div></article><article class="card"><span class="num">07</span><h3>Визуализация и BI</h3><p>Как донести результат</p><div class="chips"><i>дашборды</i><i>типы графиков</i><i>сторителлинг</i></div></article></div></section>
-<section class="sec ph"><div class="sec-h"><h2><em>4</em>Python</h2><span>блок 08</span></div><div class="grid"><article class="card"><span class="num">08</span><h3>Python для аналитика</h3><p>Автоматизируем рутину</p><div class="chips"><i>pandas</i><i>подключение к БД</i><i>скрипты и обработка данных</i></div></article></div></section></div>
+<section class="sec ph"><div class="sec-h"><h2><em>3</em>Метрики и BI</h2><span>блоки 06–07</span></div><div class="grid"><article class="card"><span class="num">06</span><h3>Метрики и продуктовое мышление</h3><p>На каком языке говорить с бизнесом</p><div class="chips"><i>AARRR и HEART</i><i>юнит-экономика</i><i>дерево метрик и когорты</i><i>разбор бизнес-кейсов</i></div></article><article class="card"><span class="num">07</span><h3>Визуализация и BI</h3><p>Как донести результат</p><div class="chips"><i>дашборды</i><i>типы графиков</i><i>сторителлинг</i></div></article></div></section>
+<section class="sec ph one"><div class="sec-h"><h2><em>4</em>Python</h2><span>блок 08</span></div><div class="grid"><article class="card"><span class="num">08</span><h3>Python для аналитика</h3><p>Автоматизируем рутину</p><div class="chips"><i>pandas</i><i>подключение к БД</i><i>скрипты и обработка данных</i></div></article></div></section>
 <section class="sec ph"><div class="sec-h"><h2><em>5</em>Выход на рынок</h2><span>блок 09</span></div><div class="grid"><article class="card"><span class="num">09</span><h3>Подготовка к собеседованиям</h3><p>Упаковка опыта и отклики</p><div class="chips"><i>резюме и легенда</i><i>soft skills</i><i>зарплатные переговоры</i><i>мок-собесы</i><i>где и как откликаться</i></div></article><article class="card hot"><span class="num">★</span><h3>Отклики, собеседования, оффер</h3><p>Основной путь закончен. Дальше практика собесов и дополнительные блоки параллельно с откликами.</p></article></div></section>
 
   <section class="sec"><div class="sec-h"><h2>Дополнительно</h2><span>блоки 10–14</span></div>
