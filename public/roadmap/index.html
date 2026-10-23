@@ -53,6 +53,19 @@ h1 em{font-style:normal;color:#ff4d63}
 .stats b{display:block;font-size:30px;line-height:1;font-weight:800}
 .stats span{display:block;margin-top:5px;font-size:13px;color:var(--muted);font-weight:600}
 .cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+/* цепочка */
+.path{position:relative;width:100%}
+.path::before{content:"";position:absolute;left:35px;top:40px;bottom:70px;width:4px;border-radius:2px;background:linear-gradient(180deg,#ff4d63,#db2461 60%,rgba(219,36,97,.25))}
+.phase{position:relative;display:flex;align-items:baseline;gap:14px;margin:34px 0 14px 100px;font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#ff4d63}
+.phase:first-child{margin-top:0}
+.phase span{font-weight:500;letter-spacing:.04em;text-transform:none;color:var(--muted);font-size:13px}
+.row{position:relative;display:flex;gap:28px;align-items:stretch;margin-bottom:16px}
+.node{flex:none;width:72px;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.node b{display:flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;background:#171423;border:3px solid var(--main);font:700 24px ui-monospace,"JetBrains Mono",Consolas,monospace;color:#fff;box-shadow:0 0 0 7px rgba(36,36,36,.9),0 0 30px rgba(224,9,23,.35)}
+.row.offer .node b{border-color:#a5e075;color:#a5e075;font:800 28px Manrope,sans-serif;box-shadow:0 0 0 7px rgba(36,36,36,.9),0 0 30px rgba(165,224,117,.3)}
+.row .card{flex:1;min-width:0;padding:24px 28px;gap:6px}
+.row .card h3{font-size:22px}
+.row .chips{margin-top:8px}
 .sec{display:grid;gap:24px;scroll-margin-top:100px}
 .sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .sec-h h2{font-size:28px;font-weight:700;display:flex;align-items:center;gap:14px}
@@ -96,6 +109,14 @@ footer b{color:#fff}
   .actions .btn{text-align:center}
   .container{padding:0 20px 48px;gap:48px;margin-top:20px}
   .card,.proj{padding:22px;border-radius:24px}
+  .path::before{left:21px;top:30px;bottom:50px;width:3px}
+  .phase{margin-left:58px}
+  .row{gap:14px}
+  .node{width:44px}
+  .node b{width:44px;height:44px;font-size:15px;border-width:2px;box-shadow:0 0 0 4px rgba(36,36,36,.9),0 0 16px rgba(224,9,23,.3)}
+  .row.offer .node b{font-size:18px}
+  .row .card{padding:18px 18px}
+  .row .card h3{font-size:19px}
   .grid.x5{grid-template-columns:1fr}
   .grid.x5 .card,.grid.x5 .card:nth-last-child(-n+2){grid-column:auto}
   .final{padding:26px;border-radius:24px}
@@ -119,10 +140,24 @@ footer b{color:#fff}
     <div class="stats"><div><b>10</b><span>блоков основного пути</span></div><div><b>5</b><span>дополнительных</span></div><div><b>5</b><span>учебных проектов</span></div></div>
   </div>
 
-<section class="sec"><div class="sec-h"><h2><em>1</em>Старт</h2><span>блоки 00–01</span></div><div class="grid"><article class="card"><span class="num">00</span><h3>Как пользоваться роадмапом</h3><p>Как устроен курс и как не перегореть</p><div class="chips"><i>порядок блоков</i><i>работа с материалами</i><i>нейросети в учебе</i></div></article><article class="card"><span class="num">01</span><h3>Введение в профессию</h3><p>Кто такой аналитик и с чем он работает</p><div class="chips"><i>виды аналитиков</i><i>работа в IT-команде</i><i>Jira и Confluence</i><i>ИИ-агент Claude Code</i></div></article></div></section>
-<section class="sec"><div class="sec-h"><h2><em>2</em>SQL и данные</h2><span>блоки 02–05</span></div><div class="grid"><article class="card"><span class="num">02</span><h3>SQL и теория баз данных</h3><p>Главный инструмент аналитика</p><div class="chips"><i>курс по SQL</i><i>реляционные БД</i><i>нормализация</i><i>дубли при JOIN</i></div></article><article class="card"><span class="num">03</span><h3>SQL и БД: продвинутый уровень</h3><p>Как база устроена внутри</p><div class="chips"><i>OLAP и OLTP</i><i>MPP и Greenplum</i><i>ClickHouse</i><i>оконные функции</i><i>оптимизация запросов</i></div></article><article class="card"><span class="num">04</span><h3>SQL практика и тренажеры</h3><p>Набиваем руку на задачах</p><div class="chips"><i>LeetCode и SQL-EX</i><i>30–50 задач на базу</i><i>100+ на уверенность</i><i>задачи к мок-собесу</i></div></article><article class="card"><span class="num">05</span><h3>Data Flow и архитектура данных</h3><p>Откуда берутся данные</p><div class="chips"><i>источник → витрина</i><i>DWH и Data Lake</i><i>ETL</i><i>batch и streaming</i></div></article></div></section>
-<section class="sec"><div class="sec-h"><h2><em>3</em>Метрики, визуализация и Python</h2><span>блоки 06–08</span></div><div class="grid"><article class="card"><span class="num">06</span><h3>Метрики и продуктовое мышление</h3><p>На каком языке говорить с бизнесом</p><div class="chips"><i>AARRR и HEART</i><i>юнит-экономика</i><i>дерево метрик и когорты</i><i>разбор бизнес-кейсов</i></div></article><article class="card"><span class="num">07</span><h3>Визуализация и BI</h3><p>Как донести результат</p><div class="chips"><i>дашборды</i><i>типы графиков</i><i>сторителлинг</i></div></article><article class="card"><span class="num">08</span><h3>Python для аналитика</h3><p>Автоматизируем рутину</p><div class="chips"><i>pandas</i><i>подключение к БД</i><i>скрипты и обработка данных</i></div></article></div></section>
-<section class="sec"><div class="sec-h"><h2><em>4</em>Выход на рынок</h2><span>блок 09</span></div><div class="grid"><article class="card"><span class="num">09</span><h3>Подготовка к собеседованиям</h3><p>Упаковка опыта и отклики</p><div class="chips"><i>резюме и легенда</i><i>soft skills</i><i>зарплатные переговоры</i><i>мок-собесы</i><i>где и как откликаться</i></div></article><article class="card hot"><span class="num">★</span><h3>Отклики, собеседования, оффер</h3><p>Основной путь закончен. Дальше практика собесов и дополнительные блоки параллельно с откликами.</p></article></div></section>
+<div class="path">
+<div class="phase">Старт<span>блоки 00–01</span></div>
+<div class="row"><div class="node"><b>00</b></div><article class="card"><h3>Как пользоваться роадмапом</h3><p>Как устроен курс и как не перегореть</p><div class="chips"><i>порядок блоков</i><i>работа с материалами</i><i>нейросети в учебе</i></div></article></div>
+<div class="row"><div class="node"><b>01</b></div><article class="card"><h3>Введение в профессию</h3><p>Кто такой аналитик и с чем он работает</p><div class="chips"><i>виды аналитиков</i><i>работа в IT-команде</i><i>Jira и Confluence</i><i>ИИ-агент Claude Code</i></div></article></div>
+<div class="phase">SQL и данные<span>блоки 02–05</span></div>
+<div class="row"><div class="node"><b>02</b></div><article class="card"><h3>SQL и теория баз данных</h3><p>Главный инструмент аналитика</p><div class="chips"><i>курс по SQL</i><i>реляционные БД</i><i>нормализация</i><i>дубли при JOIN</i></div></article></div>
+<div class="row"><div class="node"><b>03</b></div><article class="card"><h3>SQL и БД: продвинутый уровень</h3><p>Как база устроена внутри</p><div class="chips"><i>OLAP и OLTP</i><i>MPP и Greenplum</i><i>ClickHouse</i><i>оконные функции</i><i>оптимизация запросов</i></div></article></div>
+<div class="row"><div class="node"><b>04</b></div><article class="card"><h3>SQL практика и тренажеры</h3><p>Набиваем руку на задачах</p><div class="chips"><i>LeetCode и SQL-EX</i><i>30–50 задач на базу</i><i>100+ на уверенность</i><i>задачи к мок-собесу</i></div></article></div>
+<div class="row"><div class="node"><b>05</b></div><article class="card"><h3>Data Flow и архитектура данных</h3><p>Откуда берутся данные</p><div class="chips"><i>источник → витрина</i><i>DWH и Data Lake</i><i>ETL</i><i>batch и streaming</i></div></article></div>
+<div class="phase">Метрики и BI<span>блоки 06–07</span></div>
+<div class="row"><div class="node"><b>06</b></div><article class="card"><h3>Метрики и продуктовое мышление</h3><p>На каком языке говорить с бизнесом</p><div class="chips"><i>AARRR и HEART</i><i>юнит-экономика</i><i>дерево метрик и когорты</i><i>разбор бизнес-кейсов</i></div></article></div>
+<div class="row"><div class="node"><b>07</b></div><article class="card"><h3>Визуализация и BI</h3><p>Как донести результат</p><div class="chips"><i>дашборды</i><i>типы графиков</i><i>сторителлинг</i></div></article></div>
+<div class="phase">Python<span>блок 08</span></div>
+<div class="row"><div class="node"><b>08</b></div><article class="card"><h3>Python для аналитика</h3><p>Автоматизируем рутину</p><div class="chips"><i>pandas</i><i>подключение к БД</i><i>скрипты и обработка данных</i></div></article></div>
+<div class="phase">Выход на рынок<span>блок 09</span></div>
+<div class="row"><div class="node"><b>09</b></div><article class="card"><h3>Подготовка к собеседованиям</h3><p>Упаковка опыта и отклики</p><div class="chips"><i>резюме и легенда</i><i>soft skills</i><i>зарплатные переговоры</i><i>мок-собесы</i><i>где и как откликаться</i></div></article></div>
+<div class="row offer"><div class="node"><b>★</b></div><article class="card hot"><h3>Отклики, собеседования, оффер</h3><p>Основной путь закончен. Дальше практика собесов и дополнительные блоки параллельно с откликами.</p></article></div>
+  </div>
 
   <section class="sec"><div class="sec-h"><h2>Дополнительно</h2><span>блоки 10–14</span></div>
     <p class="sec-note">Проходятся по желанию и параллельно с откликами. Если собеседования идут в продуктовую аналитику, статистику и A/B стоит взять раньше остальных.</p>
