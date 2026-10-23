@@ -5,6 +5,7 @@ import styles from './Header.module.scss'
 const NAV_LINKS = [
   { label: 'Обо мне', href: '#about' },
   { label: 'Менторство', href: '#mentorship' },
+  { label: 'Роадмап', href: '/roadmap/' },
   { label: 'Доп. услуги', href: '#services' },
   { label: 'Отзывы', href: '#reviews' },
   { label: 'FAQ', href: '#faq' },
