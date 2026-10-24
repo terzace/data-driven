@@ -21,7 +21,25 @@
 }
 
 .icon {
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+  margin-bottom: 4px;
+
+  border-radius: 18px;
+  border: 1px solid rgba(var(--accent-2-rgb), 0.35);
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.28) 0%, rgba(var(--accent-2-rgb), 0.08) 100%);
+  color: var(--accent-soft);
+  transition: all 0.3s ease;
+}
+
+.card:hover .icon {
+  color: #ffffff;
+  border-color: rgba(var(--accent-2-rgb), 0.6);
+  box-shadow: 0 0 22px rgba(var(--accent-rgb), 0.35);
 }
 
 .title {
