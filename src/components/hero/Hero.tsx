@@ -1,4 +1,5 @@
-import { LINKS, ROADMAP_MINI } from '../../constants'
+import { LINKS } from '../../constants'
+import heroImage from '../../assets/hero.jpg'
 import styles from './Hero.module.scss'
 
 function Hero() {
@@ -22,27 +23,14 @@ function Hero() {
         </div>
 
         <ul className={styles.facts}>
-          <li>Банки, FMCG, ритейл, стартапы</li>
+          <li>С нуля до senior за 1,5 года</li>
           <li>200+ собеседований</li>
-          <li>Договор и оплата частями</li>
+          <li>Банки, FMCG, ритейл, стартапы</li>
         </ul>
       </div>
 
-      <a className={styles.path} href="/roadmap/" aria-label="Открыть роадмап">
-        <p className={styles.pathLabel}>Роадмап</p>
-        <h2>Путь до оффера</h2>
-        <p className={styles.pathNote}>10 блоков от первого SQL-запроса до собеседований</p>
-
-        <ol className={styles.steps}>
-          {ROADMAP_MINI.map((step) => (
-            <li key={step.num} className={step.offer ? `${styles.step} ${styles.stepOffer}` : styles.step}>
-              <span className={styles.node}>{step.num}</span>
-              <span>{step.title}</span>
-            </li>
-          ))}
-        </ol>
-
-        <span className={styles.pathLink}>Смотреть роадмап →</span>
+      <a className={styles.visual} href={LINKS.groupTg} target="_blank" rel="noreferrer" aria-label="Telegram-канал Data Driven">
+        <img src={heroImage} alt="Data Driven · Bogdan Ivanov" />
       </a>
     </section>
   )

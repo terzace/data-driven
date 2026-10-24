@@ -7,6 +7,7 @@ import ForWho from './components/for-who/ForWho'
 import Header from './components/header/Header'
 import Hero from './components/hero/Hero'
 import Reviews from './components/reviews/Reviews'
+import RoadmapStrip from './components/roadmap-strip/RoadmapStrip'
 import ServiceBlock from './components/service-block/ServiceBlock'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <main className={styles.container}>
         <Hero />
+        <RoadmapStrip />
         <Contents />
         <AboutMe />
         <ForWho />
