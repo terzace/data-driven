@@ -25,7 +25,7 @@ function Hero() {
         <ul className={styles.facts}>
           <li>С нуля до senior за 1,5 года</li>
           <li>200+ собеседований</li>
-          <li>Банки, FMCG, ритейл, стартапы</li>
+          <li>ВТБ, Альфа-Банк, Axenix, Philip Morris, Magnit</li>
         </ul>
       </div>
 
