@@ -29,7 +29,7 @@ function ServiceCard({ card, featured, id }: ServiceCardProps) {
   return (
     <div id={id} className={featured ? `${styles.wrapper} ${styles.wrapperFeatured}` : styles.wrapper}>
       <div className={styles.textWrapper}>
-        <h2>{card.title}</h2>
+        <h3>{card.title}</h3>
 
         <p className={styles.textDescriptionColor}>{card.description}</p>
       </div>
