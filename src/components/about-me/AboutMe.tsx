@@ -1,32 +1,28 @@
-import { DESCRIPTION_ABOUT_ME } from '../../constants'
-import Avatar from '../avatar/Avatar'
-import TelegramButtons from '../telegram-buttons/TelegramButtons'
+import { DESCRIPTION_ABOUT_ME, RESULTS } from '../../constants'
+import Section from '../section/Section'
 import styles from './AboutMe.module.scss'
 
 function AboutMe() {
   return (
-    <div id="about" className={styles.wrapper}>
-      <Avatar />
-
-      <div className={styles.titleWrapper}>
-        <h1>Data Driven / Bogdan Ivanov</h1>
-        <p className={styles.titleDesription}>Менторство и выход на оффер DA / PA / DE</p>
-      </div>
-
-      <div className={styles.descWrapper}>
-        {DESCRIPTION_ABOUT_ME.map((description, index) => (
-          <div key={index} className={styles.textWrapper}> 
-            <p className={styles.descriptionIcon}>{description.icon}</p> 
-            <div>
-            <p className={styles.textBold}>{description.text1}</p>
-            <p className={styles.textColorGray}>{description.text2}</p>
-            </div>
+    <Section id="about" num="01" title="Обо мне">
+      <div className={styles.results}>
+        {RESULTS.map((item) => (
+          <div key={item.label} className={styles.result}>
+            <p className={styles.value}>{item.value}</p>
+            <p className={styles.label}>{item.label}</p>
           </div>
         ))}
       </div>
 
-      <TelegramButtons />
-    </div>
+      <ul className={styles.list}>
+        {DESCRIPTION_ABOUT_ME.map((item) => (
+          <li key={item.text1} className={styles.item}>
+            <p className={styles.bold}>{item.text1}</p>
+            <p className={styles.gray}>{item.text2}</p>
+          </li>
+        ))}
+      </ul>
+    </Section>
   )
 }
 

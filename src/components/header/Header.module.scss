@@ -4,8 +4,8 @@
   z-index: 10;
 
   width: 100%;
-  background-color: #12101c;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--panel);
+  border-bottom: 1px solid var(--line);
 }
 
 .inner {
@@ -13,11 +13,54 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 28px;
 
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 18px 32px;
+  padding: 14px 32px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.brandMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.2;
+}
+
+.brandName {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.brandNote {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
 }
 
 .burger {
@@ -60,20 +103,20 @@
 .menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex: 1;
-  gap: 20px;
+  gap: 28px;
 }
 
 .nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 28px;
+  gap: 24px;
 }
 
 .nav a {
-  color: #9ca3af;
-  font-size: 15px;
+  color: var(--muted);
+  font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -86,45 +129,20 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
-.materialsButton {
-  white-space: nowrap;
-  color: #ffffff;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50px;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.materialsButton:hover {
-  border-color: var(--main-color);
-  background: rgba(224, 9, 23, 0.08);
-}
-
-.ctaButton {
-  white-space: nowrap;
-  color: #ffffff;
-  background: linear-gradient(125deg, var(--main-color) 0%, #db2461 100%);
-  border: 1px solid var(--main-color);
-  border-radius: 50px;
-  padding: 10px 22px;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.ctaButton:hover {
-  transform: scale(1.05);
+@media (max-width: 1000px) {
+  .brandNote {
+    display: none;
+  }
 }
 
 @media (max-width: 860px) {
+  .inner {
+    padding: 14px 20px;
+  }
+
   .burger {
     display: flex;
   }
@@ -141,9 +159,9 @@
     align-items: stretch;
     gap: 24px;
 
-    background-color: #12101c;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 24px 32px 32px;
+    background-color: var(--panel);
+    border-bottom: 1px solid var(--line);
+    padding: 24px 20px 28px;
     box-shadow: 0 16px 24px rgba(0, 0, 0, 0.3);
   }
 
@@ -160,11 +178,5 @@
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
-  }
-
-  .materialsButton,
-  .ctaButton {
-    width: 100%;
-    text-align: center;
   }
 }

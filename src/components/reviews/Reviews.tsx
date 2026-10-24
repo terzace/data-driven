@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { REVIEWS } from '../../constants'
+import Section from '../section/Section'
 import styles from './Reviews.module.scss'
 
 function Reviews() {
@@ -11,9 +12,7 @@ function Reviews() {
   const review = REVIEWS[index]
 
   return (
-    <div id="reviews" className={styles.wrapper}>
-      <h2>Отзывы</h2>
-
+    <Section id="reviews" num="04" title="Отзывы">
       <div className={styles.card}>
         <p className={styles.text}>{review.text}</p>
 
@@ -53,7 +52,7 @@ function Reviews() {
 
         <button className={styles.arrow} onClick={next} aria-label="Следующий отзыв">→</button>
       </div>
-    </div>
+    </Section>
   )
 }
 

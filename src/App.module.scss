@@ -1,8 +1,15 @@
 .container {
   display: grid;
 
-  max-width: 1200px;
-  margin: 32px auto 0;
-  padding: 0 32px;
-  gap: 64px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 32px 40px;
+  gap: 104px;
+}
+
+@media (max-width: 860px) {
+  .container {
+    padding: 0 20px 24px;
+    gap: 72px;
+  }
 }

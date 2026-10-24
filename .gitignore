@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# local preview build helpers
+_tmp_public
+_tmp_out
+_tmp_vite.config.ts

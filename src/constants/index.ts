@@ -4,3 +4,4 @@ export * from './service-card';
 export * from './faq';
 export * from './for-who';
 export * from './reviews';
+export * from './site';

@@ -1,15 +1,6 @@
 import { useState } from 'react'
-import { LINKS } from '../../constants'
+import { LINKS, NAV_LINKS } from '../../constants'
 import styles from './Header.module.scss'
-
-const NAV_LINKS = [
-  { label: 'Обо мне', href: '#about' },
-  { label: 'Менторство', href: '#mentorship' },
-  { label: 'Роадмап', href: '/roadmap/' },
-  { label: 'Доп. услуги', href: '#services' },
-  { label: 'Отзывы', href: '#reviews' },
-  { label: 'FAQ', href: '#faq' },
-]
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -19,6 +10,14 @@ function Header() {
   return (
     <header className={styles.wrapper}>
       <div className={styles.inner}>
+        <a href={import.meta.env.BASE_URL} className={styles.brand}>
+          <span className={styles.brandMark}>DD</span>
+          <span className={styles.brandText}>
+            <span className={styles.brandName}>Богдан Иванов</span>
+            <span className={styles.brandNote}>Data Driven</span>
+          </span>
+        </a>
+
         <button
           className={isOpen ? `${styles.burger} ${styles.burgerOpen}` : styles.burger}
           onClick={() => setIsOpen((open) => !open)}
@@ -38,12 +37,8 @@ function Header() {
           </nav>
 
           <div className={styles.actions}>
-            <button className={styles.materialsButton} onClick={() => window.open(LINKS.groupTg, '_blank')}>
-              Бесплатные материалы
-            </button>
-            <button className={styles.ctaButton} onClick={() => window.open(LINKS.privateTg, '_blank')}>
-              Бесплатная консультация
-            </button>
+            <a className="btn btn--ghost" href={LINKS.groupTg} target="_blank" rel="noreferrer">Бесплатные материалы</a>
+            <a className="btn btn--primary" href={LINKS.privateTg} target="_blank" rel="noreferrer">Написать</a>
           </div>
         </div>
       </div>
