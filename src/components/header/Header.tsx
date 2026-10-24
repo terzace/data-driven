@@ -11,8 +11,11 @@ function Header() {
     <header className={styles.wrapper}>
       <div className={styles.inner}>
         <a href={import.meta.env.BASE_URL} className={styles.brand}>
-          <span className={styles.brandName}>Богдан Иванов</span>
-          <span className={styles.brandNote}>Data Driven</span>
+          <span className={styles.brandMark}>DD</span>
+          <span className={styles.brandText}>
+            <span className={styles.brandName}>Богдан Иванов</span>
+            <span className={styles.brandNote}>Data Driven</span>
+          </span>
         </a>
 
         <button

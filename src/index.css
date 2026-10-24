@@ -11,23 +11,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --accent: #e00917;
-  --accent-2: #db2461;
-  --accent-soft: #ff4d63;
-  --accent-rgb: 224, 9, 23;
-  --accent-2-rgb: 219, 36, 97;
-  --bg: #242424;
-  --bg-rgb: 36, 36, 36;
-  --card: #171423;
-  --panel: #12101c;
-  --muted: #9ca3af;
-  --line: rgba(255, 255, 255, 0.08);
-
-  --main-color: var(--accent);
-  --bg-color: var(--bg);
-}
-
-:root[data-theme='blue'] {
   --accent: #2563eb;
   --accent-2: #38a9f8;
   --accent-soft: #6ea8ff;
@@ -37,6 +20,11 @@
   --bg-rgb: 18, 22, 29;
   --card: #19212f;
   --panel: #0e1219;
+  --muted: #9ca3af;
+  --line: rgba(255, 255, 255, 0.08);
+
+  --main-color: var(--accent);
+  --bg-color: var(--bg);
 }
 
 html {
