@@ -25,7 +25,7 @@ function Hero() {
         <ul className={styles.facts}>
           <li>С нуля до senior за 1,5 года</li>
           <li>200+ собеседований</li>
-          <li>600 000 ₽+ за 2 года пути с нуля</li>
+          <li>600 000 ₽+ за 2 года пути</li>
           <li>Оффер ученика 250 000 ₽ за 2 месяца</li>
           <li>ВТБ, Альфа-Банк, Axenix, Philip Morris, Magnit</li>
           <li>Резюме и мок-собеседования</li>
