@@ -12,7 +12,7 @@ function Header() {
       <div className={styles.inner}>
         <a href={import.meta.env.BASE_URL} className={styles.brand}>
           <span className={styles.brandName}>Богдан Иванов</span>
-          <span className={styles.brandNote}>менторство по аналитике данных</span>
+          <span className={styles.brandNote}>Data Driven</span>
         </a>
 
         <button
