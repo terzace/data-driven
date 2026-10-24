@@ -9,22 +9,27 @@
 <meta property="og:title" content="Роадмап аналитика данных: путь до оффера">
 <meta property="og:description" content="Пошаговый план из 10 блоков: от первого SQL-запроса до собеседований. Плюс 5 дополнительных блоков и учебные проекты.">
 <meta property="og:url" content="https://datadrivenbogdan.com/roadmap/">
-<meta property="og:image" content="https://datadrivenbogdan.com/roadmap/preview-2.png">
+<meta property="og:image" content="https://datadrivenbogdan.com/roadmap/preview-3.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/vite.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{font-family:'Manrope',system-ui,Avenir,Helvetica,Arial,sans-serif;color:#fff;--main:#e00917;--bg:#242424;--muted:#9ca3af}
+:root{font-family:'Manrope',system-ui,Avenir,Helvetica,Arial,sans-serif;color:#fff;--main:#2563eb;--main2:#38a9f8;--bg:#12161d;--muted:#9ca3af}
 *{box-sizing:border-box}
 h1,h2,h3,h4,p{margin:0}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background-color:var(--bg);background-image:radial-gradient(circle at 50% -30%,var(--main) 0%,#242424 60%);background-attachment:fixed;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{margin:0;background-color:var(--bg);background-image:radial-gradient(circle at 50% -30%,var(--main) 0%,#12161d 60%);background-attachment:fixed;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 /* header как на сайте */
-.hd{position:sticky;top:0;z-index:10;background:#12101c;border-bottom:1px solid rgba(255,255,255,.08)}
+.hd{position:sticky;top:0;z-index:10;background:#0e1219;border-bottom:1px solid rgba(255,255,255,.08)}
 .hd-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:1200px;margin:0 auto;padding:18px 32px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0;text-decoration:none}
+.mark{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--main) 0%,var(--main2) 100%);font-size:15px;font-weight:800;letter-spacing:-.02em;color:#fff}
+.bt{display:flex;flex-direction:column;gap:1px;line-height:1.2}
+.bt b{font-weight:800;font-size:16px}
+.bt i{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6ea8ff}
 .menu{display:flex;align-items:center;justify-content:space-between;flex:1;gap:20px}
 .nav{display:flex;flex-wrap:wrap;gap:28px}
 .nav a{color:var(--muted);font-size:15px;font-weight:500;text-decoration:none;transition:color .3s}
@@ -32,8 +37,8 @@ a{color:inherit}
 .actions{display:flex;align-items:center;gap:14px}
 .btn{display:inline-block;white-space:nowrap;text-decoration:none;color:#fff;border-radius:50px;font-weight:700;cursor:pointer;transition:all .3s;font-family:inherit}
 .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.15);padding:10px 20px;font-size:14px;font-weight:600}
-.btn.ghost:hover{border-color:var(--main);background:rgba(224,9,23,.08)}
-.btn.cta{background:linear-gradient(125deg,var(--main) 0%,#db2461 100%);border:1px solid var(--main);padding:10px 22px;font-size:14px}
+.btn.ghost:hover{border-color:var(--main);background:rgba(37,99,235,.08)}
+.btn.cta{background:linear-gradient(125deg,var(--main) 0%,#38a9f8 100%);border:1px solid var(--main);padding:10px 22px;font-size:14px}
 .btn.cta:hover{filter:brightness(1.12)}
 .btn.big{padding:14px 30px;font-size:16px}
 .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;padding:0;margin-left:auto;background:none;border:none;cursor:pointer;z-index:2}
@@ -46,7 +51,7 @@ a{color:inherit}
 .hero{text-align:center;display:grid;justify-items:center;gap:18px;padding-top:24px}
 .chip{border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:5px 16px;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.06)}
 h1{font-size:clamp(32px,5.4vw,56px);line-height:1.08;font-weight:800;letter-spacing:-.02em}
-h1 em{font-style:normal;color:#ff4d63}
+h1 em{font-style:normal;color:#6ea8ff}
 .lead{max-width:640px;font-size:18px;color:#d1d5db}
 .stats{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 .stats div{border:1px solid rgba(255,255,255,.1);background:rgba(18,16,28,.55);border-radius:20px;padding:12px 22px;text-align:left}
@@ -56,45 +61,46 @@ h1 em{font-style:normal;color:#ff4d63}
 .sec{display:grid;gap:24px;scroll-margin-top:100px}
 /* нить между этапами */
 .sec.ph{position:relative}
-.container>.sec.ph::before{content:"";position:absolute;left:16px;top:-64px;height:64px;width:2px;border-radius:1px;background:linear-gradient(180deg,rgba(255,77,99,0),#ff4d63)}
+.container>.sec.ph::before{content:"";position:absolute;left:16px;top:-64px;height:64px;width:2px;border-radius:1px;background:linear-gradient(180deg,rgba(110,168,255,0),#6ea8ff)}
 .hero+.sec.ph::before{display:none}
 .sec.ph.one .grid{grid-template-columns:calc((100% - 20px) / 2)}
 .sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .sec-h h2{font-size:28px;font-weight:700;display:flex;align-items:center;gap:14px}
-.sec-h h2 em{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(125deg,var(--main),#db2461);font-size:16px;font-weight:800}
+.sec-h h2 em{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(125deg,var(--main),#38a9f8);font-size:16px;font-weight:800}
 .sec-h span{font-size:14px;color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .grid.x5{grid-template-columns:repeat(6,1fr)}
 .grid.x5 .card{grid-column:span 2}
 .grid.x5 .card:nth-last-child(-n+2){grid-column:span 3}
-.card{display:flex;flex-direction:column;gap:10px;background:#171423;border:1px solid #171423;border-radius:30px;padding:28px;transition:all .3s}
+.card{display:flex;flex-direction:column;gap:10px;background:#19212f;border:1px solid #19212f;border-radius:30px;padding:28px;transition:all .3s}
 .card:hover{border-color:var(--main)}
-.num{font:700 15px ui-monospace,"JetBrains Mono",Consolas,monospace;color:#ff4d63;letter-spacing:.04em}
+.num{font:700 15px ui-monospace,"JetBrains Mono",Consolas,monospace;color:#6ea8ff;letter-spacing:.04em}
 .card h3{font-size:20px;line-height:1.25;font-weight:700}
 .card p{color:var(--muted);font-size:15px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
 .chips i{font-style:normal;font-size:12.5px;font-weight:500;color:#d1d5db;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:3px 11px}
-.card.hot{border-color:var(--main);background:rgba(224,9,23,.1)}
-.card.hot:hover{background:rgba(224,9,23,.18)}
+.card.hot{border-color:var(--main);background:rgba(37,99,235,.1)}
+.card.hot:hover{background:rgba(37,99,235,.18)}
 .card.hot .num{color:#a5e075;font-size:20px}
 .card.hot p{color:#e5e7eb}
 .sec-note{color:var(--muted);font-size:15px;max-width:700px}
-.proj{display:flex;flex-wrap:wrap;align-items:center;gap:20px 40px;background:#171423;border:1px solid #171423;border-radius:30px;padding:32px;transition:all .3s}
+.proj{display:flex;flex-wrap:wrap;align-items:center;gap:20px 40px;background:#19212f;border:1px solid #19212f;border-radius:30px;padding:32px;transition:all .3s}
 .proj:hover{border-color:var(--main)}
 .proj p{flex:1 1 280px;color:var(--muted)}
 .proj .chips{flex:1 1 360px;margin:0;padding:0}
-.final{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 40px;background:#171423;border:1px solid var(--main);border-radius:30px;padding:36px;background-image:linear-gradient(120deg,rgba(224,9,23,.18),rgba(219,36,97,.06))}
+.final{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 40px;background:#19212f;border:1px solid var(--main);border-radius:30px;padding:36px;background-image:linear-gradient(120deg,rgba(37,99,235,.18),rgba(56,169,248,.06))}
 .final h2{font-size:26px;font-weight:700}
 .final p{margin-top:8px;color:#d1d5db;max-width:560px}
 .final .cta-row{justify-content:flex-start}
 .dl{color:var(--muted);font-size:14px;text-align:center}
-.dl a{color:#ff8a9a}
+.dl a{color:#9cc2ff}
 footer{max-width:1200px;margin:0 auto;padding:24px 32px 40px;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 footer b{color:#fff}
+@media(max-width:1000px){.bt i{display:none}}
 @media(max-width:860px){
   .hd-in{padding:14px 20px}
   .burger{display:flex}
-  .menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:flex-start;gap:20px;padding:20px;background:#12101c;border-bottom:1px solid rgba(255,255,255,.08)}
+  .menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:flex-start;gap:20px;padding:20px;background:#0e1219;border-bottom:1px solid rgba(255,255,255,.08)}
   .menu.open{display:flex}
   .nav{flex-direction:column;gap:16px}
   .actions{flex-direction:column;align-items:stretch;width:100%}
@@ -112,10 +118,11 @@ footer b{color:#fff}
 }
 </style></head><body>
 <header class="hd"><div class="hd-in">
+  <a class="brand" href="/"><span class="mark">DD</span><span class="bt"><b>Богдан Иванов</b><i>Data Driven</i></span></a>
   <button class="burger" id="bg" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
   <div class="menu" id="mn">
-    <nav class="nav"><a href="/#about">Обо мне</a><a href="/#mentorship">Менторство</a><a href="/roadmap/" class="on">Роадмап</a><a href="/#services">Доп. услуги</a><a href="/#reviews">Отзывы</a><a href="/#faq">FAQ</a></nav>
-    <div class="actions"><a class="btn ghost" href="https://t.me/data_driven_bogdan" target="_blank" rel="noopener">Бесплатные материалы</a><a class="btn cta" href="https://t.me/b_ivanov_kz" target="_blank" rel="noopener">Бесплатная консультация</a></div>
+    <nav class="nav"><a href="/#about">Обо мне</a><a href="/roadmap/" class="on">Роадмап</a><a href="/#services">Услуги</a><a href="/#reviews">Отзывы</a><a href="/#faq">FAQ</a></nav>
+    <div class="actions"><a class="btn ghost" href="https://t.me/data_driven_bogdan" target="_blank" rel="noopener">Бесплатные материалы</a><a class="btn cta" href="https://t.me/b_ivanov_kz" target="_blank" rel="noopener">Написать</a></div>
   </div>
 </div></header>
 <main class="container">
