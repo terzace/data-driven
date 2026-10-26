@@ -57,3 +57,14 @@
   padding-bottom: 20px;
   margin-top: -8px;
 }
+
+.answer a {
+  color: var(--accent-soft);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.answer a:hover {
+  text-decoration: underline;
+}

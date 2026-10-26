@@ -32,7 +32,17 @@ function Faq() {
                 <span className={isOpen ? `${styles.icon} ${styles.iconOpen}` : styles.icon}>+</span>
               </button>
 
-              {isOpen && <p className={styles.answer}>{item.answer}</p>}
+              {isOpen && (
+                <p className={styles.answer}>
+                  {item.answer}
+                  {item.link && (
+                    <>
+                      {' '}
+                      <a href={item.link.href}>{item.link.label} →</a>
+                    </>
+                  )}
+                </p>
+              )}
             </div>
           )
         })}
