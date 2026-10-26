@@ -33,6 +33,11 @@ function Reviews() {
                 <span className={styles.metaLabel}>Оффер:</span> {review.offer}
               </span>
             )}
+            {review.offers && (
+              <span className={styles.metaItem}>
+                <span className={styles.metaLabel}>Офферов:</span> {review.offers}
+              </span>
+            )}
           </div>
         </div>
       </div>
