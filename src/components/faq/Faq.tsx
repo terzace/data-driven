@@ -38,7 +38,7 @@ function Faq() {
                   {item.link && (
                     <>
                       {' '}
-                      <a href={item.link.href}>{item.link.label} →</a>
+                      <a href={item.link.href} download={item.link.download ? '' : undefined}>{item.link.label} ↓</a>
                     </>
                   )}
                 </p>
