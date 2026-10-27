@@ -9,6 +9,12 @@ type ServicePlan = {
   badge?: string;
 }
 
+type ServicePlansDetails = {
+  title: string;
+  items: { heading: string; text: string }[];
+  link?: { label: string; href: string; download?: boolean };
+}
+
 type ServiceCardProps = {
   card: {
     title: string;
@@ -19,6 +25,7 @@ type ServiceCardProps = {
     postPrice?: string,
     plans?: ServicePlan[],
     plansNote?: string,
+    plansDetails?: ServicePlansDetails,
     buttonTitle: string;
   }
   featured?: boolean;
@@ -50,6 +57,30 @@ function ServiceCard({ card, featured, id }: ServiceCardProps) {
               </div>
             ))}
             {card.plansNote && <p className={styles.descriptionPrice}>{card.plansNote}</p>}
+            {card.plansDetails && (
+              <details className={styles.details}>
+                <summary className={styles.detailsSummary}>
+                  <span>{card.plansDetails.title}</span>
+                  <span className={styles.detailsIcon} aria-hidden="true">+</span>
+                </summary>
+                <div className={styles.detailsBody}>
+                  {card.plansDetails.items.map((item, index) => (
+                    <p key={index} className={styles.detailsItem}>
+                      <strong>{item.heading}.</strong> {item.text}
+                    </p>
+                  ))}
+                  {card.plansDetails.link && (
+                    <a
+                      className={styles.detailsLink}
+                      href={card.plansDetails.link.href}
+                      download={card.plansDetails.link.download ? '' : undefined}
+                    >
+                      {card.plansDetails.link.label} ↓
+                    </a>
+                  )}
+                </div>
+              </details>
+            )}
           </div>
         ) : (
           <div className={styles.textPrice}>
