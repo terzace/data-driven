@@ -28,6 +28,7 @@ export const SERVICE_CARD = [
         { label: 'Меньше отдаешь потом', prepay: '40 000 ₽', post: '+120% от 1 оклада', highlight: true, badge: 'Выгоднее' },
       ],
       plansNote: 'Постоплата только после выхода на работу. Предоплату и постоплату можно вносить частями.',
-      buttonTitle: 'Обсудить условия'
+      buttonTitle: 'Обсудить условия',
+      bookSource: 'mentoring'
     },
 ]

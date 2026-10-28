@@ -1,4 +1,4 @@
-import { LINKS } from '../../constants';
+import { LINKS, bookTg } from '../../constants';
 import styles from './ServiceCard.module.scss'
 
 type ServicePlan = {
@@ -20,6 +20,7 @@ type ServiceCardProps = {
     plans?: ServicePlan[],
     plansNote?: string,
     buttonTitle: string;
+    bookSource?: string;
   }
   featured?: boolean;
   id?: string;
@@ -60,7 +61,7 @@ function ServiceCard({ card, featured, id }: ServiceCardProps) {
         )}
         {card.postPrice && <p className={styles.postPrice}>{card.postPrice}</p>}
 
-        <button onClick={() => window.open(LINKS.privateTg, '_blank')} className={styles.cardButton}>{card.buttonTitle}</button>
+        <button onClick={() => window.open(card.bookSource ? bookTg(card.bookSource) : LINKS.privateTg, '_blank')} className={styles.cardButton}>{card.buttonTitle}</button>
       </div>
     </div>
   )

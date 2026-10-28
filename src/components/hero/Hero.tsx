@@ -1,4 +1,4 @@
-import { LINKS } from '../../constants'
+import { LINKS, bookTg, materialsTg } from '../../constants'
 import heroImage from '../../assets/hero.jpg'
 import styles from './Hero.module.scss'
 
@@ -18,8 +18,8 @@ function Hero() {
         </p>
 
         <div className={styles.actions}>
-          <a className="btn btn--primary btn--lg" href={LINKS.privateTg} target="_blank" rel="noreferrer">Написать</a>
-          <a className="btn btn--ghost btn--lg" href={LINKS.groupTg} target="_blank" rel="noreferrer">Бесплатные материалы</a>
+          <a className="btn btn--primary btn--lg" href={bookTg('hero')} target="_blank" rel="noreferrer">Записаться на консультацию</a>
+          <a className="btn btn--ghost btn--lg" href={materialsTg('hero')} target="_blank" rel="noreferrer">Бесплатные материалы</a>
         </div>
 
         <ul className={styles.facts}>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { LINKS, NAV_LINKS } from '../../constants'
+import { NAV_LINKS, bookTg, materialsTg } from '../../constants'
 import styles from './Header.module.scss'
 
 function Header() {
@@ -37,8 +37,8 @@ function Header() {
           </nav>
 
           <div className={styles.actions}>
-            <a className="btn btn--ghost" href={LINKS.groupTg} target="_blank" rel="noreferrer">Бесплатные материалы</a>
-            <a className="btn btn--primary" href={LINKS.privateTg} target="_blank" rel="noreferrer">Написать</a>
+            <a className="btn btn--ghost" href={materialsTg('header')} target="_blank" rel="noreferrer">Бесплатные материалы</a>
+            <a className="btn btn--primary" href={bookTg('header')} target="_blank" rel="noreferrer">Записаться</a>
           </div>
         </div>
       </div>

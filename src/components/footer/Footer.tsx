@@ -1,4 +1,4 @@
-import { LINKS } from '../../constants'
+import { LINKS, bookTg } from '../../constants'
 import styles from './Footer.module.scss'
 
 function Footer() {
@@ -7,11 +7,12 @@ function Footer() {
       <div className={styles.inner}>
         <div className={styles.cta}>
           <h2>Обсудим, с чего начать?</h2>
-          <p>Напиши в Telegram: разберём твой бэкграунд и цель, а дальше решим, нужен ли формат менторства.</p>
+          <p>Запишись на бесплатную консультацию в Telegram: разберём твой бэкграунд и цель, а дальше решим, нужен ли формат менторства.</p>
         </div>
 
         <div className={styles.actions}>
-          <a className="btn btn--primary btn--lg" href={LINKS.privateTg} target="_blank" rel="noreferrer">Написать</a>
+          <a className="btn btn--primary btn--lg" href={bookTg('footer')} target="_blank" rel="noreferrer">Записаться на консультацию</a>
+          <a className="btn btn--ghost btn--lg" href={LINKS.privateTg} target="_blank" rel="noreferrer">Написать лично</a>
           <a className="btn btn--ghost btn--lg" href={LINKS.groupTg} target="_blank" rel="noreferrer">Telegram-канал</a>
         </div>
       </div>
