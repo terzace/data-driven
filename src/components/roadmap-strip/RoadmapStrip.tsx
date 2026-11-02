@@ -8,7 +8,7 @@ function RoadmapStrip() {
         <div>
           <p className={styles.label}>Роадмап</p>
           <h2>Путь до оффера</h2>
-          <p className={styles.note}>11 блоков основного пути от первого SQL-запроса до оффера</p>
+          <p className={styles.note}>10 блоков от первого SQL-запроса до собеседований</p>
         </div>
         <span className={styles.link}>Смотреть роадмап →</span>
       </div>
