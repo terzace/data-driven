@@ -37,7 +37,7 @@ function Header() {
           </nav>
 
           <div className={styles.actions}>
-            <a className="btn btn--ghost" href={LINKS.groupTg} target="_blank" rel="noreferrer">Бесплатные материалы</a>
+            <a className="btn btn--primary" href={LINKS.groupTg} target="_blank" rel="noreferrer">Бесплатные материалы</a>
           </div>
         </div>
       </div>
