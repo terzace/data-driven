@@ -12,7 +12,7 @@ function Reviews() {
   const review = REVIEWS[index]
 
   return (
-    <Section id="reviews" num="04" title="Отзывы">
+    <Section id="reviews" num="05" title="Отзывы">
       <div className={styles.card}>
         <p className={styles.text}>{review.text}</p>
 

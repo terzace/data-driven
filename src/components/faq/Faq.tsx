@@ -9,7 +9,7 @@ function Faq() {
   return (
     <Section
       id="faq"
-      num="05"
+      num="06"
       title="Вопросы и ответы"
       note={
         <>

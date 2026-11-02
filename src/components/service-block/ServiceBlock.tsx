@@ -10,9 +10,9 @@ function ServiceBlock() {
   return (
     <Section
       id="services"
-      num="03"
+      num="04"
       title="Услуги и цены"
-      note="Начать можно с разовой консультации, а менторство обсудим после неё."
+      note="Начни с бесплатной встречи на 30 минут: решим, нужно ли тебе менторство. Консультация, мок и резюме это отдельные разовые услуги."
     >
       <div className={styles.cardWrapper}>
         {simpleCards.map((card, index) => <ServiceCard key={index} card={card} />)}

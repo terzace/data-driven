@@ -10,10 +10,11 @@ export const NAV_LINKS = [
 
 export const SECTIONS = [
   { id: 'about', num: '01', title: 'Обо мне' },
-  { id: 'for-who', num: '02', title: 'Кому подойдёт' },
-  { id: 'services', num: '03', title: 'Услуги и цены' },
-  { id: 'reviews', num: '04', title: 'Отзывы' },
-  { id: 'faq', num: '05', title: 'Вопросы и ответы' },
+  { id: 'mentoring', num: '02', title: 'Что такое менторство' },
+  { id: 'for-who', num: '03', title: 'Кому подойдёт' },
+  { id: 'services', num: '04', title: 'Услуги и цены' },
+  { id: 'reviews', num: '05', title: 'Отзывы' },
+  { id: 'faq', num: '06', title: 'Вопросы и ответы' },
 ]
 
 export const ROADMAP_MINI = [
