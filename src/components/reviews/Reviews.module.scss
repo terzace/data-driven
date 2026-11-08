@@ -1,26 +1,90 @@
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
 
   min-height: 140px;
-  background-color: var(--card);
+  overflow: hidden;
+  background:
+    linear-gradient(160deg, rgba(var(--accent-rgb), 0.12) 0%, rgba(var(--accent-rgb), 0) 45%),
+    var(--card);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
-  padding: 32px;
+  padding: 36px 36px 32px;
+}
+
+.quote {
+  position: absolute;
+  top: 6px;
+  right: 26px;
+
+  font: 800 120px/1 Georgia, serif;
+  color: rgba(var(--accent-2-rgb), 0.16);
+  pointer-events: none;
+  user-select: none;
 }
 
 .text {
+  position: relative;
+  max-width: 860px;
   color: #e5e7eb;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.textClamped {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+
+.more {
+  align-self: flex-start;
+  margin-top: -8px;
+  padding: 6px 0;
+
+  background: none;
+  border: none;
+  color: var(--accent-soft);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.more:hover {
+  text-decoration: underline;
 }
 
 .author {
   display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.authorInfo {
+  display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  min-width: 0;
 }
 
 .name {
@@ -44,6 +108,12 @@
   padding: 4px 12px;
 }
 
+.metaOffer {
+  border-color: rgba(var(--accent-2-rgb), 0.55);
+  background: rgba(var(--accent-rgb), 0.22);
+  font-weight: 700;
+}
+
 .metaLabel {
   color: var(--muted);
   margin-right: 2px;
@@ -57,8 +127,8 @@
 }
 
 .arrow {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
 
   display: flex;
@@ -81,7 +151,19 @@
 .dots {
   display: flex;
   align-items: center;
-  gap: 8px;
+}
+
+.dotButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 44px;
+  padding: 0 2px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .dot {
@@ -89,7 +171,6 @@
   height: 8px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 
@@ -101,6 +182,16 @@
 
 @media (max-width: 860px) {
   .card {
-    padding: 22px;
+    padding: 26px 22px 22px;
+  }
+
+  .quote {
+    top: 2px;
+    right: 16px;
+    font-size: 90px;
+  }
+
+  .text {
+    font-size: 15px;
   }
 }
