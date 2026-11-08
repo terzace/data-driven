@@ -36,9 +36,11 @@ function useTilt() {
     }
 
     document.addEventListener('pointermove', onMove, { passive: true })
+    window.addEventListener('scroll', onLeave, { passive: true })
     document.documentElement.addEventListener('pointerleave', onLeave)
     return () => {
       document.removeEventListener('pointermove', onMove)
+      window.removeEventListener('scroll', onLeave)
       document.documentElement.removeEventListener('pointerleave', onLeave)
     }
   }, [])

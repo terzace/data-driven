@@ -23,6 +23,9 @@ function HeroScene() {
     let mouseY = 0
     let tiltX = 0
     let tiltY = 0
+    let px = new Float32Array(0)
+    let py = new Float32Array(0)
+    let depth = new Float32Array(0)
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2)
@@ -34,6 +37,9 @@ function HeroScene() {
       const small = width < 700
       cols = small ? 26 : 46
       rows = small ? 16 : 24
+      px = new Float32Array(cols * rows)
+      py = new Float32Array(cols * rows)
+      depth = new Float32Array(cols * rows)
     }
 
     const draw = (time: number) => {
@@ -51,10 +57,6 @@ function HeroScene() {
       const centerX = width < 700 ? width * 0.5 : width * 0.62
       const centerY = height * 0.74
       const distance = 2.6
-
-      const px = new Float32Array(cols * rows)
-      const py = new Float32Array(cols * rows)
-      const depth = new Float32Array(cols * rows)
 
       for (let r = 0; r < rows; r++) {
         for (let c = 0; c < cols; c++) {
