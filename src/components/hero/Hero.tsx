@@ -1,10 +1,13 @@
 import { LINKS, bookTg } from '../../constants'
 import heroImage from '../../assets/hero.jpg'
+import HeroScene from './HeroScene'
 import styles from './Hero.module.scss'
 
 function Hero() {
   return (
     <section className={styles.hero}>
+      <HeroScene />
+
       <div className={styles.text}>
         <p className={styles.eyebrow}>Менторство · DA / PA / DE</p>
 
@@ -33,8 +36,12 @@ function Hero() {
         </ul>
       </div>
 
-      <a className={styles.visual} href={LINKS.groupTg} target="_blank" rel="noreferrer" aria-label="Telegram-канал Data Driven">
-        <img src={heroImage} alt="Data Driven · Bogdan Ivanov" />
+      <a className={styles.visual} href={LINKS.groupTg} target="_blank" rel="noreferrer" aria-label="Telegram-канал Data Driven" data-tilt>
+        <img src={heroImage} alt="Data Driven · Bogdan Ivanov" width={640} height={640} fetchPriority="high" />
+        <span className={styles.badge}>
+          <span className={styles.badgeLabel}>Оффер ученика за 2 месяца</span>
+          <span className={styles.badgeValue}>250 000 ₽</span>
+        </span>
       </a>
     </section>
   )

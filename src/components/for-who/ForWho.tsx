@@ -13,7 +13,7 @@ function ForWho() {
     >
       <div className={styles.cardWrapper}>
         {FOR_WHO.map((item, index) => (
-          <div key={index} className={styles.card}>
+          <div key={index} className={styles.card} data-tilt>
             <div className={styles.icon}>
               <ForWhoIconSvg name={item.icon} />
             </div>

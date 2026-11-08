@@ -25,6 +25,34 @@
   gap: 20px;
 }
 
+.bullets {
+  display: grid;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #c3c8d4;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 30px;
+  line-height: 1.45;
+}
+
+.bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.4l2.7 2.6L13 6.6' fill='none' stroke='white' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat,
+    linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+
 .textDescriptionColor {
   color: var(--muted);
   white-space: pre-line;
@@ -140,7 +168,7 @@
 }
 
 .planPrepay {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -150,13 +178,18 @@
 }
 
 .cardButton {
+  display: block;
+  box-sizing: border-box;
   width: 100%;
   border-radius: 12px;
   background: #ffffff0d;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 10px 0;
+  padding: 13px 0;
+  font-size: 14px;
   font-weight: bold;
+  text-align: center;
+  text-decoration: none;
 
   cursor: pointer;
   transition: all 0.3s ease;
@@ -171,6 +204,11 @@
 }
 
 .wrapperFeatured {
+  border-color: rgba(var(--accent-2-rgb), 0.35);
+  background:
+    linear-gradient(135deg, rgba(var(--accent-rgb), 0.2) 0%, rgba(var(--accent-2-rgb), 0.04) 55%, rgba(255, 255, 255, 0) 100%),
+    var(--card);
+  box-shadow: 0 0 70px rgba(var(--accent-rgb), 0.16);
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
@@ -180,11 +218,24 @@
 
 .wrapperFeatured .textWrapper {
   flex: 1 1 280px;
+  align-content: center;
 }
 
 .wrapperFeatured .priceWrapper {
   flex: 1 1 320px;
   border-top: none;
+}
+
+.wrapperFeatured .cardButton {
+  background: linear-gradient(125deg, var(--accent) 0%, var(--accent-2) 100%);
+  border-color: var(--accent);
+  padding: 15px 0;
+  font-size: 15px;
+}
+
+.wrapperFeatured .cardButton:hover {
+  background: linear-gradient(125deg, var(--accent) 0%, var(--accent-2) 100%);
+  filter: brightness(1.12);
 }
 
 .wrapperFeatured .plansWrapper {
@@ -200,5 +251,14 @@
   .wrapperFeatured .priceWrapper {
     padding-left: 40px;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper,
+  .wrapperFeatured {
+    padding: 22px;
+    border-radius: 24px;
+    gap: 18px;
   }
 }

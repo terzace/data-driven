@@ -27,12 +27,22 @@ type ServiceCardProps = {
 }
 
 function ServiceCard({ card, featured, id }: ServiceCardProps) {
+  const bullets = card.description.includes('•')
+    ? card.description.split('\n').map((line) => line.replace(/^\s*•\s*/, '').trim()).filter(Boolean)
+    : null
+
   return (
-    <div id={id} className={featured ? `${styles.wrapper} ${styles.wrapperFeatured}` : styles.wrapper}>
+    <div id={id} className={featured ? `${styles.wrapper} ${styles.wrapperFeatured}` : styles.wrapper} data-tilt={featured ? undefined : true}>
       <div className={styles.textWrapper}>
         <h3>{card.title}</h3>
 
-        <p className={styles.textDescriptionColor}>{card.description}</p>
+        {bullets ? (
+          <ul className={styles.bullets}>
+            {bullets.map((line) => <li key={line}>{line}</li>)}
+          </ul>
+        ) : (
+          <p className={styles.textDescriptionColor}>{card.description}</p>
+        )}
       </div>
 
       <div className={styles.priceWrapper}>
@@ -61,7 +71,14 @@ function ServiceCard({ card, featured, id }: ServiceCardProps) {
         )}
         {card.postPrice && <p className={styles.postPrice}>{card.postPrice}</p>}
 
-        <button onClick={() => window.open(card.bookSource ? bookTg(card.bookSource) : LINKS.privateTg, '_blank')} className={styles.cardButton}>{card.buttonTitle}</button>
+        <a
+          className={styles.cardButton}
+          href={card.bookSource ? bookTg(card.bookSource) : LINKS.privateTg}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {card.buttonTitle}
+        </a>
       </div>
     </div>
   )
