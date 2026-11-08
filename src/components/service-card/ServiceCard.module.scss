@@ -150,13 +150,18 @@
 }
 
 .cardButton {
+  display: block;
+  box-sizing: border-box;
   width: 100%;
   border-radius: 12px;
   background: #ffffff0d;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 10px 0;
+  padding: 13px 0;
+  font-size: 14px;
   font-weight: bold;
+  text-align: center;
+  text-decoration: none;
 
   cursor: pointer;
   transition: all 0.3s ease;

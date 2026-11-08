@@ -34,7 +34,7 @@ function Hero() {
       </div>
 
       <a className={styles.visual} href={LINKS.groupTg} target="_blank" rel="noreferrer" aria-label="Telegram-канал Data Driven">
-        <img src={heroImage} alt="Data Driven · Bogdan Ivanov" />
+        <img src={heroImage} alt="Data Driven · Bogdan Ivanov" width={640} height={640} fetchPriority="high" />
       </a>
     </section>
   )

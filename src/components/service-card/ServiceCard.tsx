@@ -61,7 +61,14 @@ function ServiceCard({ card, featured, id }: ServiceCardProps) {
         )}
         {card.postPrice && <p className={styles.postPrice}>{card.postPrice}</p>}
 
-        <button onClick={() => window.open(card.bookSource ? bookTg(card.bookSource) : LINKS.privateTg, '_blank')} className={styles.cardButton}>{card.buttonTitle}</button>
+        <a
+          className={styles.cardButton}
+          href={card.bookSource ? bookTg(card.bookSource) : LINKS.privateTg}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {card.buttonTitle}
+        </a>
       </div>
     </div>
   )
