@@ -27,12 +27,22 @@ type ServiceCardProps = {
 }
 
 function ServiceCard({ card, featured, id }: ServiceCardProps) {
+  const bullets = card.description.includes('•')
+    ? card.description.split('\n').map((line) => line.replace(/^\s*•\s*/, '').trim()).filter(Boolean)
+    : null
+
   return (
     <div id={id} className={featured ? `${styles.wrapper} ${styles.wrapperFeatured}` : styles.wrapper}>
       <div className={styles.textWrapper}>
         <h3>{card.title}</h3>
 
-        <p className={styles.textDescriptionColor}>{card.description}</p>
+        {bullets ? (
+          <ul className={styles.bullets}>
+            {bullets.map((line) => <li key={line}>{line}</li>)}
+          </ul>
+        ) : (
+          <p className={styles.textDescriptionColor}>{card.description}</p>
+        )}
       </div>
 
       <div className={styles.priceWrapper}>
