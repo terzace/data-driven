@@ -43,3 +43,40 @@
   font: 700 12px ui-monospace, 'JetBrains Mono', Consolas, monospace;
   color: var(--muted);
 }
+
+@media (max-width: 860px) {
+  .wrapper {
+    gap: 12px;
+    border: none;
+    padding: 0;
+  }
+
+  .list {
+    box-sizing: border-box;
+    display: flex;
+    gap: 8px;
+    width: calc(100% + 40px);
+    margin: 0 -20px;
+    padding: 2px 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .list li {
+    flex-shrink: 0;
+  }
+
+  .list a {
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid var(--line);
+    border-radius: 99px;
+    background: rgba(var(--bg-rgb), 0.5);
+    white-space: nowrap;
+  }
+}
