@@ -11,8 +11,11 @@ import HowItWorks from './components/how-it-works/HowItWorks'
 import Reviews from './components/reviews/Reviews'
 import RoadmapStrip from './components/roadmap-strip/RoadmapStrip'
 import ServiceBlock from './components/service-block/ServiceBlock'
+import useTilt from './components/tilt/useTilt'
 
 function App() {
+  useTilt()
+
   return (
     <>
       <Header />

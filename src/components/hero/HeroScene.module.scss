@@ -1,0 +1,26 @@
+.scene {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: -80px;
+  left: -32px;
+  right: -32px;
+  width: calc(100% + 64px);
+  height: calc(100% + 80px);
+
+  pointer-events: none;
+  opacity: 1;
+  -webkit-mask-image: radial-gradient(ellipse 60% 62% at 64% 74%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 60% 62% at 64% 74%, #000 30%, transparent 100%);
+}
+
+@media (max-width: 860px) {
+  .scene {
+    left: -20px;
+    right: -20px;
+    width: calc(100% + 40px);
+    opacity: 0.8;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 72%, #000 35%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 72%, #000 35%, transparent 100%);
+  }
+}

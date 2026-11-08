@@ -7,7 +7,7 @@ function AboutMe() {
     <Section id="about" num="01" title="Обо мне">
       <div className={styles.results}>
         {RESULTS.map((item) => (
-          <div key={item.label} className={styles.result}>
+          <div key={item.label} className={styles.result} data-tilt>
             <p className={styles.value}>{item.value}</p>
             <p className={styles.label}>{item.label}</p>
           </div>
@@ -16,7 +16,7 @@ function AboutMe() {
 
       <ul className={styles.list}>
         {DESCRIPTION_ABOUT_ME.map((item) => (
-          <li key={item.text1} className={styles.item}>
+          <li key={item.text1} className={styles.item} data-tilt>
             <p className={styles.bold}>{item.text1}</p>
             <p className={styles.gray}>{item.text2}</p>
           </li>

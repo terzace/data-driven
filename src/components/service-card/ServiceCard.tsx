@@ -32,7 +32,7 @@ function ServiceCard({ card, featured, id }: ServiceCardProps) {
     : null
 
   return (
-    <div id={id} className={featured ? `${styles.wrapper} ${styles.wrapperFeatured}` : styles.wrapper}>
+    <div id={id} className={featured ? `${styles.wrapper} ${styles.wrapperFeatured}` : styles.wrapper} data-tilt={featured ? undefined : true}>
       <div className={styles.textWrapper}>
         <h3>{card.title}</h3>
 
