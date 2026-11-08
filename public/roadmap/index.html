@@ -129,6 +129,23 @@ footer b{color:#fff}
   .lead{font-size:16px}
   footer{padding:20px 20px 32px}
 }
+/* визуал: волна данных за hero, наклон и появление карточек */
+body{overflow-x:clip}
+.hero{position:relative;isolation:isolate}
+.wave{position:absolute;z-index:-1;left:-32px;right:-32px;top:-60px;width:calc(100% + 64px);height:calc(100% + 180px);pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 66% 52% at 50% 86%,#000 30%,transparent 100%);mask-image:radial-gradient(ellipse 66% 52% at 50% 86%,#000 30%,transparent 100%)}
+.stats div{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.stats b{background:linear-gradient(125deg,#fff 30%,#6ea8ff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.card,.proj{background:linear-gradient(160deg,rgba(37,99,235,.13) 0%,rgba(37,99,235,0) 50%),#19212f;border-color:rgba(255,255,255,.06)}
+.card .num{display:inline-flex;align-self:flex-start;padding:3px 10px;border-radius:99px;border:1px solid rgba(56,169,248,.35);background:rgba(37,99,235,.18);font-size:13px}
+.card.hot{border-color:rgba(165,224,117,.55);background:linear-gradient(160deg,rgba(165,224,117,.14) 0%,rgba(37,99,235,.1) 60%),#19212f;box-shadow:0 0 60px rgba(165,224,117,.12)}
+.card.hot:hover{border-color:#a5e075;background:linear-gradient(160deg,rgba(165,224,117,.2) 0%,rgba(37,99,235,.14) 60%),#19212f}
+.card.hot .num{border:none;background:none;padding:0;font-size:22px}
+.sec-h h2 em{box-shadow:0 0 0 4px rgba(37,99,235,.18),0 0 22px rgba(56,169,248,.45)}
+.container>.sec.ph::before{width:2px;background:linear-gradient(180deg,rgba(110,168,255,0),#38a9f8);box-shadow:0 0 10px rgba(56,169,248,.6)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+a:focus-visible,button:focus-visible{outline:2px solid #6ea8ff;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 </style><!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -153,6 +170,7 @@ footer b{color:#fff}
 </div></header>
 <main class="container">
   <div class="hero">
+    <canvas class="wave" id="wave" aria-hidden="true"></canvas>
     <span class="chip">Roadmap</span>
     <h1>Аналитик данных:<br><em>путь до оффера</em></h1>
     <p class="lead">Пошаговый план из 10 блоков, от первого SQL-запроса до собеседований. Дальше пять дополнительных блоков и готовые проекты для практики.</p>
@@ -181,5 +199,61 @@ footer b{color:#fff}
 var b=document.getElementById('bg'),m=document.getElementById('mn');
 b.addEventListener('click',function(){var o=m.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
 m.addEventListener('click',function(ev){if(ev.target.tagName==='A'){m.classList.remove('open');b.classList.remove('open')}});
+</script>
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// волна данных: сетка точек в 3D, рисуется только пока видна
+var c=document.getElementById('wave'),x=c&&c.getContext('2d');
+if(x){
+  var W,H,cols,rows,px,py,dp,run=false,vis=true,fr=0,mx=0,my=0,tx=0,ty=0;
+  var size=function(){var r=Math.min(devicePixelRatio||1,2);W=c.clientWidth;H=c.clientHeight;c.width=Math.round(W*r);c.height=Math.round(H*r);x.setTransform(r,0,0,r,0,0);var s=W<700;cols=s?26:46;rows=s?16:24;px=new Float32Array(cols*rows);py=new Float32Array(cols*rows);dp=new Float32Array(cols*rows)};
+  var draw=function(time){
+    var t=time*0.00045;tx+=(my-tx)*0.04;ty+=(mx-ty)*0.04;
+    var ay=-0.5+Math.sin(t*0.6)*0.18+ty*0.25,ax=1.08+tx*0.08,cy=Math.cos(ay),sy=Math.sin(ay),cx=Math.cos(ax),sx=Math.sin(ax);
+    var sc=W<700?W*0.62:W*0.44,ox=W*0.5,oy=H*0.88,d=2.6;
+    for(var r=0;r<rows;r++)for(var k=0;k<cols;k++){
+      var X=k/(cols-1)*2.4-1.2,Z=r/(rows-1)*2.4-1.2;
+      var Y=Math.sin(X*2.6+t*2)*0.17+Math.cos(Z*3.1+t*1.6)*0.14+Math.sin((X+Z)*1.7-t*1.2)*0.09;
+      var rx=X*cy-Z*sy,rz=X*sy+Z*cy,ry=Y*cx-rz*sx,rz2=Y*sx+rz*cx,p=d/(d+rz2),i=r*cols+k;
+      px[i]=ox+rx*sc*p;py[i]=oy+ry*sc*p;dp[i]=p;
+    }
+    x.clearRect(0,0,W,H);x.lineWidth=1;x.strokeStyle='rgba(56,169,248,0.2)';x.beginPath();
+    for(r=0;r<rows;r++)for(k=0;k<cols;k++){i=r*cols+k;
+      if(k<cols-1){x.moveTo(px[i],py[i]);x.lineTo(px[i+1],py[i+1])}
+      if(r<rows-1){x.moveTo(px[i],py[i]);x.lineTo(px[i+cols],py[i+cols])}}
+    x.stroke();
+    for(i=0;i<px.length;i++){var q=dp[i],a=Math.min(0.95,Math.max(0.15,(q-0.55)*1.8));
+      x.fillStyle=q>1.02?'rgba(110,168,255,'+a+')':'rgba(56,169,248,'+a+')';x.beginPath();x.arc(px[i],py[i],Math.max(0.7,(q-0.5)*3),0,6.2832);x.fill()}
+  };
+  var loop=function(tm){draw(tm);fr=requestAnimationFrame(loop)};
+  var start=function(){if(run||reduce||!vis||document.hidden)return;run=true;fr=requestAnimationFrame(loop)};
+  var stop=function(){run=false;cancelAnimationFrame(fr)};
+  size();draw(performance.now());
+  new IntersectionObserver(function(e){vis=e[0].isIntersecting;vis?start():stop()}).observe(c);
+  addEventListener('resize',function(){size();if(!run)draw(performance.now())});
+  addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-0.5;my=e.clientY/innerHeight-0.5},{passive:true});
+  document.addEventListener('visibilitychange',function(){document.hidden?stop():start()});
+  start();
+}
+// появление карточек при прокрутке
+var items=document.querySelectorAll('.sec-h,.sec-note,.card,.proj,.final');
+if(!reduce&&'IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  items.forEach(function(el,n){el.classList.add('rv');el.style.transitionDelay=(el.classList.contains('card')?(n%4)*70:0)+'ms';io.observe(el)});
+}
+// наклон карточек за курсором, только для мыши
+if(!reduce&&matchMedia('(hover: hover) and (pointer: fine)').matches){
+  var act=null,reset=function(el){el.style.transition='transform .5s ease,border-color .3s,background .3s,opacity .6s';el.style.transform=''};
+  document.addEventListener('pointermove',function(e){
+    var t=e.target.closest&&e.target.closest('.card,.proj');
+    if(act&&act!==t)reset(act);act=t;if(!t)return;
+    var b=t.getBoundingClientRect(),dx=(e.clientX-b.left)/b.width-0.5,dy=(e.clientY-b.top)/b.height-0.5;
+    t.style.transitionDelay='0ms';t.style.transition='transform .12s ease-out,border-color .3s,background .3s,opacity .6s';
+    t.style.transform='perspective(900px) rotateX('+(-dy*6).toFixed(2)+'deg) rotateY('+(dx*6).toFixed(2)+'deg) translateY(-4px)';
+  },{passive:true});
+  addEventListener('scroll',function(){if(act){reset(act);act=null}},{passive:true});
+}
+})();
 </script>
 </body></html>
