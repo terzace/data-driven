@@ -1,12 +1,67 @@
+.top {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 20px;
+}
+
+.photo {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+
+  border: 1px solid rgba(var(--accent-2-rgb), 0.3);
+  border-radius: 28px;
+  box-shadow: 0 0 60px rgba(var(--accent-rgb), 0.22);
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(var(--bg-rgb), 0) 55%, rgba(var(--bg-rgb), 0.85) 100%);
+  pointer-events: none;
+}
+
+.caption {
+  position: absolute;
+  z-index: 1;
+  left: 22px;
+  bottom: 18px;
+  display: grid;
+  gap: 2px;
+}
+
+.captionName {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.captionNote {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+
 .results {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
 .result {
   display: grid;
-  align-content: start;
+  align-content: center;
   gap: 8px;
 
   background-color: var(--card);
@@ -87,6 +142,16 @@
 }
 
 @media (max-width: 860px) {
+  .top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .photo {
+    aspect-ratio: 1;
+    border-radius: 22px;
+  }
+
   .results {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;

@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import { ROADMAP_MINI } from '../../constants'
 import styles from './RoadmapStrip.module.scss'
 
@@ -14,9 +15,14 @@ function RoadmapStrip() {
       </div>
 
       <ol className={styles.steps}>
-        {ROADMAP_MINI.map((step) => (
-          <li key={step.num} className={step.offer ? `${styles.step} ${styles.stepOffer}` : styles.step}>
+        {ROADMAP_MINI.map((step, index) => (
+          <li
+            key={step.num}
+            className={step.offer ? `${styles.step} ${styles.stepOffer}` : styles.step}
+            style={{ '--i': index } as CSSProperties}
+          >
             <span className={styles.node}>{step.num}</span>
+            <span className={styles.bar} aria-hidden="true" />
             <span className={styles.title}>{step.title}</span>
           </li>
         ))}
